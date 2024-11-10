@@ -1,4 +1,38 @@
-package PACKAGE_NAME;
+public class Car implements Vehicle{
 
-public class Car {
+    private String model;
+    private int days;
+    private final double dailyRate = 50;
+
+
+    public Car(){
+
+    }
+    public Car(String model, int days){
+        this.model = model;
+        this.days = days;
+    }
+    public String getModel() {
+        return model;
+    }
+    public void setModel(String model) {
+        this.model = model;
+    }
+    public int getDays() {
+        return days;
+    }
+    public void setDays(int days) {
+        this.days = days;
+    }
+
+    @Override
+    public double calculateRentalCost() {
+        return this.days * this.dailyRate;
+    }
+
+    @Override
+    public void displayDetails() {
+
+        System.out.println("Car model: "+model +"\nDaily rate: $"+dailyRate+"\nRental cost: $"+calculateRentalCost());
+    }
 }
